@@ -1,0 +1,13 @@
+body{
+  width:100vw;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e6ccff;
+}
+
+li{
+  font-size: .8em;
+}
