@@ -3,10 +3,10 @@ import useKeypress from "./customHooks/useKeypress";
 import useOnClickOutside from "./customHooks/useOnClickOutside";
 import './InlineEditable.css';
 
-function InlineEditable() {
+function InlineEditable(props) {
   const [editMode, setEditMode] = useState(false);
-  const [inputValue, setInputValue] = useState('edit me');
-  const [textDisplay, setTextDisplay] = useState('');
+  const [inputValue, setInputValue] = useState(props.content);
+  const [textDisplay, setTextDisplay] = useState(props.content);
   
   const enter = useKeypress('Enter');
   const esc = useKeypress('Escape');
@@ -45,7 +45,7 @@ function InlineEditable() {
   return (
     <div ref={wrapperRef}>
       {
-        editMode? <input className='editable-input' type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)} ref={inputRef}/> : <span onClick={()=>setEditMode(true)} className='editable-text'>{inputValue}</span>
+        editMode? <input className='editable-input' type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)} ref={inputRef}/> : <span onClick={()=>setEditMode(true)} className='editable-text'>{textDisplay}</span>
       }
     </div>
   );

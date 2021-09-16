@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <h2>Edit the text below</h2>
-      <InlineEditable/> 
+      <InlineEditable content='edit me!'/> 
       <ul>
         <li>Click outside or Enter to submit</li>
         <li>Escape to cancel</li>
